@@ -1,0 +1,28 @@
+
+
+app.controller("MainstoreController",function($scope,mainStoreService,$routeParams){
+$scope.id =  $routeParams.id;
+	$scope.getAll = function(){
+		mainStoreService.getProducts().then(function(data){
+			$scope.products = data;
+			console.log ('Get Data Success!!!' + $scope.products)
+		})
+			
+	
+	}
+	
+	$scope.add = function(index,){
+		mainStoreService.getProductIA(id).then(function(data){
+			$scope.products = data;
+			console.log ('Get Data Success!!!' + $scope.products)
+		})
+			
+	
+	}
+	
+});
+app.directive('myDir',function(){
+	return {
+		templateUrl: "/fresherangular/views/store/temp.html"
+	}
+})

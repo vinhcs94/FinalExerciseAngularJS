@@ -1,0 +1,40 @@
+var app = angular.module('myApp');
+
+app.factory('mainStoreService', function($http) {
+
+  var getProducts = function() {
+    return $http.get("http://localhost:9000/fresherangular/product/list")
+      .then(function(response) {
+        return response.data;
+      });
+  };
+  
+  var getProductIA = function(id) {
+	    return $http.get("http://localhost:9000/fresherangular/product/increase/" + id)
+	      .then(function(response) {
+	        return response.data;
+	      });
+	  };
+	  
+	  var getProductDA = function(id) {
+		    return $http.get("http://localhost:9000/fresherangular/product/decrease/" + id)
+		      .then(function(response) {
+		        return response.data;
+		      });
+		  };
+		  
+		  var addProduct = function(id) {
+			    return $http.get("http://localhost:9000/fresherangular/product/decrease/" + id)
+			      .then(function(response) {
+			        return response.data;
+			      });
+			  };
+  return {
+	  getProducts : getProducts,
+	  getProductIA : getProductIA,
+	  getProductDA : getProductDA,
+	  addProduct : addProduct,
+  }
+  
+  
+});

@@ -1,0 +1,18 @@
+
+
+app.controller("MainstoreController",function($scope,,mainStoreService,$routeParams){
+
+	$scope.getAll = function(){
+		mainStoreService.getProducts().then(function(data){
+			
+		})
+			
+	
+	}
+	
+});
+app.directive('myDir',function(){
+	return {
+		templateUrl: "/fresherangular/views/store/temp.html"
+	}
+})
