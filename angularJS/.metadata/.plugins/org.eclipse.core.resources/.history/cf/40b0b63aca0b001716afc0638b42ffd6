@@ -1,9 +1,0 @@
-app.controller("DetailController",function($scope,mainStoreService,$routeParams){
-	
-	$scope.id = $routeParams.id;
-	mainStoreService.getProduct(id).then(function(data){
-  	  $scope.product = data;
-    });
-    
-    
-});
